@@ -11,6 +11,19 @@ const taskOperator = {
 
     return array;
   },
+  //task 3)
+  primeNumberChecker(number) {
+    let isPrimeFlag = true;
+
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) {
+        isPrimeFlag = false;
+        break;
+      }
+    }
+
+    return isPrimeFlag;
+  },
   //task 4)
   factorialCalculation(n) {
     let facSum = 1;
@@ -101,7 +114,6 @@ console.log(
   taskOperator.isPalindromeNum(751257),
   taskOperator.isPalindromeNum(1234321)
 );
-*/
 
 //fibonacciSequence
 console.log(taskOperator.fibonacciSequenceV1(1));
@@ -115,3 +127,16 @@ console.log(taskOperator.fibonacciSequenceV2(2));
 console.log(taskOperator.fibonacciSequenceV2(3));
 console.log(taskOperator.fibonacciSequenceV2(5));
 console.log(taskOperator.fibonacciSequenceV2(7));
+*/
+
+//primeNumberChecker
+console.log(
+  taskOperator.primeNumberChecker(2),
+  taskOperator.primeNumberChecker(3),
+  taskOperator.primeNumberChecker(5),
+  taskOperator.primeNumberChecker(6),
+  taskOperator.primeNumberChecker(13),
+  taskOperator.primeNumberChecker(27),
+  taskOperator.primeNumberChecker(28),
+  taskOperator.primeNumberChecker(39)
+);
