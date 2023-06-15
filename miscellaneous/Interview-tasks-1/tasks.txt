@@ -1,0 +1,11 @@
+Functions:
+1) String reversal
+2) Array reversal
+3) Prime number check
+4) Factorial calculation
+5) Palindrome check
+6) Fibonacci sequence
+
+System:
+Vehicle rental system
+Create classes representing vehicles like Car, Motorcycle, and Truck. Implement methods for renting and returning vehicles, keeping track of available vehicles, and calculating rental fees.
