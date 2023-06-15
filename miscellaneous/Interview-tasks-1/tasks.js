@@ -10,4 +10,19 @@ const taskOperator = {
 
     return array;
   },
+  isPalindromeNum(number) {
+    let numsArr = number
+      .toString()
+      .split("")
+      .map((num) => Number(num));
+
+    return this.reverseArray(numsArr).join("") === number.toString();
+  },
 };
+
+//isPalindromeNum
+console.log(
+  taskOperator.isPalindromeNum(75257),
+  taskOperator.isPalindromeNum(751257),
+  taskOperator.isPalindromeNum(1234321)
+);
