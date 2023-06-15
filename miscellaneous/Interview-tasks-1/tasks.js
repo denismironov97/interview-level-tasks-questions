@@ -10,6 +10,15 @@ const taskOperator = {
 
     return array;
   },
+  factorialCalculation(n) {
+    let facSum = 1;
+
+    for (let i = n; i > 0; i--) {
+      facSum *= i;
+    }
+
+    return facSum;
+  },
   isPalindromeNum(number) {
     let numsArr = number
       .toString()
@@ -19,6 +28,14 @@ const taskOperator = {
     return this.reverseArray(numsArr).join("") === number.toString();
   },
 };
+
+//factorialCalculation
+console.log(
+  taskOperator.factorialCalculation(5),
+  taskOperator.factorialCalculation(1),
+  taskOperator.factorialCalculation(2),
+  taskOperator.factorialCalculation(7)
+);
 
 //isPalindromeNum
 console.log(
