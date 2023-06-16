@@ -16,26 +16,20 @@ const Calculator = {
   },
 
   findMax: function (arr) {
-    let max = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i] > max) {
-        max = arr[i];
-      }
-    }
-    return max;
+    return arr.sort((a, b) => b - a)[0];
   },
 
   checkPalindrome: function (str) {
-    let reversed = str.split("").reverse().join("");
-    return str === reversed;
+    return str.split("").reverse().join("") === str;
   },
 
   generateFibonacci: function (n) {
-    let fibonacci = [0, 1];
+    let fibonacci = [1, 1];
+
     for (let i = 2; i < n; i++) {
-      let num = fibonacci[i - 1] + fibonacci[i - 2];
-      fibonacci.push(num);
+      fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
     }
+
     return fibonacci;
   },
 
@@ -64,11 +58,11 @@ const str = "hello world";
 const arr = [3, 1, 7, 5, 2, 9];
 
 //console.log("Sum:", Calculator.calculateSum(numbers));
-console.log("Capitalized String:", Calculator.capitalizeString(str));
-// console.log("Max Value:", Calculator.findMax(arr));
-// console.log("Is Palindrome:", Calculator.checkPalindrome(str));
-// console.log("Fibonacci Sequence:", Calculator.generateFibonacci(10));
-// console.log("Binary Representation:", Calculator.convertToBinary(42));
+//console.log("Capitalized String:", Calculator.capitalizeString(str));
+//console.log("Max Value:", Calculator.findMax(arr));
+//console.log("Is Palindrome:", Calculator.checkPalindrome(str));
+//console.log("Fibonacci Sequence:", Calculator.generateFibonacci(10));
+console.log("Binary Representation:", Calculator.convertToBinary(42));
 // console.log("Random Number:", Calculator.getRandomNumber(1, 100));
 // console.log(
 //   "Filtered Array:",
