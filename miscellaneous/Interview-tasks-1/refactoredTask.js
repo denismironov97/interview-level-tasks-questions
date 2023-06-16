@@ -34,21 +34,17 @@ const Calculator = {
   },
 
   convertToBinary: function (num) {
-    return num.toString(2);
+    return Number(num.toString(2));
   },
 
-  getRandomNumber: function (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  getRandomNumber: function (minNum, maxNum) {
+    minNum = Math.ceil(minNum);
+    maxNum = Math.floor(maxNum);
+    return Math.floor(Math.random() * (maxNum - minNum + 1) + minNum);
   },
 
-  filterArray: function (arr, condition) {
-    let filteredArray = [];
-    for (let i = 0; i < arr.length; i++) {
-      if (condition(arr[i])) {
-        filteredArray.push(arr[i]);
-      }
-    }
-    return filteredArray;
+  filterArray: function (arr, predicate) {
+    return arr.filter(predicate);
   },
 };
 
@@ -62,9 +58,18 @@ const arr = [3, 1, 7, 5, 2, 9];
 //console.log("Max Value:", Calculator.findMax(arr));
 //console.log("Is Palindrome:", Calculator.checkPalindrome(str));
 //console.log("Fibonacci Sequence:", Calculator.generateFibonacci(10));
-console.log("Binary Representation:", Calculator.convertToBinary(42));
-// console.log("Random Number:", Calculator.getRandomNumber(1, 100));
-// console.log(
-//   "Filtered Array:",
-//   Calculator.filterArray(arr, (num) => num % 2 === 0)
-// );
+// console.log("Binary Representation:", Calculator.convertToBinary(42));
+// console.log("Binary Representation:", Calculator.convertToBinary(6));
+// console.log("Binary Representation:", Calculator.convertToBinary(-10));
+//console.log("Random Number:", Calculator.getRandomNumber(1, 100));
+console.log(
+  "Filtered Array:",
+  Calculator.filterArray(arr, (num) => {
+    return num % 2 === 0;
+  })
+);
+
+console.log(
+  "Filtered Array:",
+  Calculator.filterArray(arr, (num) => num % 2 === 0)
+);
