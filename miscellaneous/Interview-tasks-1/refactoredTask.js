@@ -1,22 +1,18 @@
 const Calculator = {
   calculateSum: function (numbers) {
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-      sum += numbers[i];
-    }
-    return sum;
+    return numbers.reduce((accum, currVal) => accum + currVal, 0);
   },
 
   // This method capitalizes the string input and returns it as a string output with capital letters
   capitalizeString: function (str) {
-    let words = str.split(" ");
-    let capitalizedWords = [];
-    for (let i = 0; i < words.length; i++) {
-      let word = words[i];
-      let capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
-      capitalizedWords.push(capitalizedWord);
-    }
-    return capitalizedWords.join(" ");
+    return str
+      .split(" ")
+      .map((word) => {
+        return (
+          word.substring(0, 1).toUpperCase() + word.substring(1, word.length)
+        );
+      })
+      .join(" ");
   },
 
   findMax: function (arr) {
@@ -67,14 +63,14 @@ const numbers = [1, 2, 3, 4, 5];
 const str = "hello world";
 const arr = [3, 1, 7, 5, 2, 9];
 
-console.log("Sum:", Calculator.calculateSum(numbers));
+//console.log("Sum:", Calculator.calculateSum(numbers));
 console.log("Capitalized String:", Calculator.capitalizeString(str));
-console.log("Max Value:", Calculator.findMax(arr));
-console.log("Is Palindrome:", Calculator.checkPalindrome(str));
-console.log("Fibonacci Sequence:", Calculator.generateFibonacci(10));
-console.log("Binary Representation:", Calculator.convertToBinary(42));
-console.log("Random Number:", Calculator.getRandomNumber(1, 100));
-console.log(
-  "Filtered Array:",
-  Calculator.filterArray(arr, (num) => num % 2 === 0)
-);
+// console.log("Max Value:", Calculator.findMax(arr));
+// console.log("Is Palindrome:", Calculator.checkPalindrome(str));
+// console.log("Fibonacci Sequence:", Calculator.generateFibonacci(10));
+// console.log("Binary Representation:", Calculator.convertToBinary(42));
+// console.log("Random Number:", Calculator.getRandomNumber(1, 100));
+// console.log(
+//   "Filtered Array:",
+//   Calculator.filterArray(arr, (num) => num % 2 === 0)
+// );
