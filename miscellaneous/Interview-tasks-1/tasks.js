@@ -1,4 +1,18 @@
 const taskOperator = {
+  //task 1)
+  reverseStringV1(stringArg) {
+    let reversedString = "";
+
+    for (let i = stringArg.length - 1; i >= 0; i--) {
+      reversedString += stringArg[i];
+    }
+
+    return reversedString;
+  },
+  reverseStringV2(stringArg) {
+    const stringArr = stringArg.split("");
+    return this.reverseArray(stringArr).join("");
+  },
   //task 2)
   reverseArray(arr) {
     let array = Array.from(arr);
@@ -100,6 +114,39 @@ const taskOperator = {
 };
 
 /*
+//reverseString
+console.log(taskOperator.reverseStringV1("hello world!"));
+console.log(taskOperator.reverseStringV1("a_b_c_d_e_f_g"));
+
+console.log(taskOperator.reverseStringV2("hello world!"));
+console.log(taskOperator.reverseStringV2("a_b_c_d_e_f_g"));
+
+console.log(
+  taskOperator.reverseStringV1("hello world!") ===
+    taskOperator.reverseStringV2("hello world!")
+);
+
+console.log(
+  taskOperator.reverseStringV1("a_b_c_d_e_f_g") ===
+    taskOperator.reverseStringV2("a_b_c_d_e_f_g")
+);
+
+//reverseArray
+console.log(taskOperator.reverseArray(["a", "b", "c", "d", "e"]));
+console.log(taskOperator.reverseArray([1, 2, 3, 4, 5]));
+
+//primeNumberChecker
+console.log(
+  taskOperator.primeNumberChecker(2),
+  taskOperator.primeNumberChecker(3),
+  taskOperator.primeNumberChecker(5),
+  taskOperator.primeNumberChecker(6),
+  taskOperator.primeNumberChecker(13),
+  taskOperator.primeNumberChecker(27),
+  taskOperator.primeNumberChecker(28),
+  taskOperator.primeNumberChecker(39)
+);
+
 //factorialCalculation
 console.log(
   taskOperator.factorialCalculation(5),
@@ -128,15 +175,3 @@ console.log(taskOperator.fibonacciSequenceV2(3));
 console.log(taskOperator.fibonacciSequenceV2(5));
 console.log(taskOperator.fibonacciSequenceV2(7));
 */
-
-//primeNumberChecker
-console.log(
-  taskOperator.primeNumberChecker(2),
-  taskOperator.primeNumberChecker(3),
-  taskOperator.primeNumberChecker(5),
-  taskOperator.primeNumberChecker(6),
-  taskOperator.primeNumberChecker(13),
-  taskOperator.primeNumberChecker(27),
-  taskOperator.primeNumberChecker(28),
-  taskOperator.primeNumberChecker(39)
-);
